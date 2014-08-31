@@ -2,7 +2,7 @@
 
 ## Instructions
 
-Please build out the mockup [found here](https://github.com/westfield/technical_tests/blob/master/design_assets/mockup.png). 
+Please build out the mockup [found here](https://github.com/westfield/technical_tests/blob/master/design_assets/mockup.png).
 
 Treat this UI as being part of a large scale web site.
 
@@ -33,6 +33,6 @@ The result should:
 
 ----
 
-Fork this repo and create a pull-request when you're done. 
+Fork this repo and create a pull-request when you're done.
 
 Good luck and we look forward to receiving your pull-request!
