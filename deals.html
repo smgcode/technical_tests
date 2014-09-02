@@ -4,6 +4,9 @@
   <head>
     <meta charset="utf-8" />
     <title>Westfield Deals</title>
+    <script type="text/javascript" src="assets/javascript/ejs_production.js"></script>
+    <script type="text/javascript" src="assets/javascript/helper.js"></script>
+    <script type="text/javascript" src="assets/javascript/deals.js"></script>
     <link href="assets/stylesheets/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="assets/images/favicon.ico">
   </head>
@@ -12,10 +15,16 @@
     <header>
       <img src="assets/images/wf_logo_white.png" alt="Westfield Logo">
       <h1>Deals</h1>
-      <nav>NSW</nav>
+      <nav>
+        <ul id="states"></ul>
+        <div>Search for deals...</div>
+      </nav>
     </header>
 
     <main>
+      <article>
+        <div id="deal-accordion"></div>
+      </article>
     </main>
   </body>
 </html>
