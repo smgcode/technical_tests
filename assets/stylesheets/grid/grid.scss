@@ -1,0 +1,49 @@
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+$mobile: 480px;
+$tablet: 768px;
+
+@media screen and (min-width: $tablet + 1) {
+  .show-tablet-plus  { display: block; }
+  .show-desktop-plus { display: block; }
+  .g-search          { width: 4 / 10 * 100%; }
+  .g-nav             { width: 1 / 10 * 100%; }
+  .g-deal            { width: 5 /  7 * 100%; }
+  .g-deal-img        { width: 1 /  7 * 100%; }
+  .g-deal-more       { width: 1 /  7 * 100%; }
+}
+
+@media screen and (max-width: $tablet) {
+  .show-tablet-plus  { display: block; }
+  .show-desktop-plus { display: none; }
+  .g-search          { width: 4 / 10 * 100%; }
+  .g-nav             { width: 1 / 10 * 100%; }
+  .g-deal            { width: 3 /  4 * 100%; }
+  .g-deal-img        { width: 1 /  4 * 100%; }
+}
+
+@media screen and (max-width: $mobile) {
+  .show-tablet-plus  { display: none; }
+  .show-desktop-plus { display: none; }
+  .g-nav             { width: 1 / 6 * 100%; }
+  .g-deal            { width: 1 / 1 * 100%; }
+}
+
+.grid {
+  background: white;
+  margin: 0;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+[class*='g-'] { float: left; }

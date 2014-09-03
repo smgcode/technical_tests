@@ -1,10 +1,79 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100,400);
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+@media screen and (min-width: 769px) {
+  .show-tablet-plus {
+    display: block; }
+
+  .show-desktop-plus {
+    display: block; }
+
+  .g-search {
+    width: 40%; }
+
+  .g-nav {
+    width: 10%; }
+
+  .g-deal-my:nth-child(2) {
+    width: 71.42857%; }
+
+  .g-deal-img {
+    width: 14.28571%; }
+
+  .g-deal-more {
+    width: 14.28571%; } }
+@media screen and (max-width: 768px) {
+  .show-tablet-plus {
+    display: block; }
+
+  .show-desktop-plus {
+    display: none; }
+
+  .g-search {
+    width: 40%; }
+
+  .g-nav {
+    width: 10%; }
+
+  .g-deal {
+    width: 75%; }
+
+  .g-deal-img {
+    width: 25%; } }
+@media screen and (max-width: 480px) {
+  .show-tablet-plus {
+    display: none; }
+
+  .show-desktop-plus {
+    display: none; }
+
+  .g-nav {
+    width: 16.66667%; }
+
+  .g-deal {
+    width: 100%; } }
+.grid {
+  background: white;
+  margin: 0; }
+  .grid:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+[class*='g-'] {
+  float: left; }
+
 header img {
   width: 130px; }
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 20px;
   font-family: 'Lato', sans-serif;
   color: #242424; }
 
@@ -12,5 +81,34 @@ h1 {
   font-weight: 100;
   font-size: 2.5em; }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
 .hide-centre {
   display: none; }
+
+/*!
+ *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("//netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?v=4.2.0");
+  src: url("//netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0") format("embedded-opentype"), url("//netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.woff?v=4.2.0") format("woff"), url("//netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.ttf?v=4.2.0") format("truetype"), url("//netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.fa-search:before {
+  content: "\f002"; }
+
+.fa-play:before {
+  content: "\f04b"; }

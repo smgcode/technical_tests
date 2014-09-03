@@ -120,7 +120,14 @@ var switchCentre = function(resp, centre) {
     var className = "hide-centre";
     var centreEl = document.getElementById(curCentre.code);
     var dealsEl = centreEl.querySelectorAll("ul:first-of-type")[0];
-    (centreEl.id != centre.code) ? addClass(dealsEl, className) : toggleClass(dealsEl, className);
+    var activeCentreEl = centreEl.querySelectorAll("p span")[0]
+    if (centreEl.id != centre.code) {
+      addClass(dealsEl, className)
+      activeCentreEl.innerHTML = "+";
+    } else {
+      toggleClass(dealsEl, className);
+      activeCentreEl.innerHTML = activeCentreEl.innerHTML == "+" ? "-" : "+";
+    }
   });
 };
 

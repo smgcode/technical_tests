@@ -1,6 +1,14 @@
 <li>
-  <img src="<%= image %>" width="100">
-  <h3><%= deal %></h3>
-  <p>Deal from <%= available_from %> to <%= available_to %>, from <%= store %></p>
-  <p>View more</p>
+  <div class="grid">
+    <div class="g-deal-img show-tablet-plus">
+      <img src="<%= image %>" width="100">
+    </div>
+    <div class="g-deal">
+      <h3><%= deal %></h3>
+      <p>Deal from <%= available_from %> to <%= available_to %>, from <%= store %></p>
+    </div>
+    <div class="g-deal-more show-desktop-plus">
+      <p>View more <i class="fa fa-play"></i></p>
+    </div>
+  </div>
 </li>
