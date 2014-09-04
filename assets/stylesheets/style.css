@@ -200,6 +200,9 @@ header nav > div {
 
 .deals li:nth-child(2n + 1) {
   background-color: #F8F8F8; }
+.deals li > div {
+  overflow: hidden;
+  position: relative; }
 
 .deal__title {
   padding: 15px; }
@@ -208,10 +211,21 @@ header nav > div {
     font-size: small;
     margin-top: 10px; }
 
+@media screen and (min-width: 769px) {
+  .deal_title--shift {
+    margin-left: 100px; } }
+@media screen and (max-width: 768px) {
+  .deal_title--shift {
+    margin-left: 100px; } }
+@media screen and (max-width: 480px) {
+  .deal_title--shift {
+    margin-left: 0; } }
 .deal__image {
   text-align: center;
-  height: 78px;
-  width: 100px; }
+  width: 100px;
+  background-color: #FFFFFF;
+  height: 100%;
+  position: absolute; }
   .deal__image img {
     vertical-align: middle;
     max-height: 78px;
