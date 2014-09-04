@@ -2,18 +2,18 @@
   border-style: solid;
   border-width: 1px;
   border-radius: 3px;
-  padding: 8px;
-  color: #6C6C6C;
+  color: $dove_gray;
   float: right;
-
-  span {
-    font-style: italic;
-    font-family: serif;
-    padding-left: 3px;
-  }
+  padding: 8px;
 
   i {
     font-size: small;
     padding: 0px 7px;
+  }
+
+  span {
+    font-family: serif;
+    font-style: italic;
+    padding-left: 3px;
   }
 }

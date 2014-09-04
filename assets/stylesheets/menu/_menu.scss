@@ -1,40 +1,27 @@
-$topGradient: #FFFFFF;
-$botGradient: #F5F5F5;
-
 .menu__tabs {
   li {
-    text-align: center;
     border-style: solid;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     border-width: 1px 1px 0 1px;
     margin-left: 3px;
     margin-right: 3px;
+    &:first-child { margin-left: 0px; }
+    &:last-child  { margin-right: 0px; }
     padding-top: 9px;
     padding-bottom: 9px;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-
-    &:first-child {
-      margin-left:0px;
-    }
-
-    &:last-child {
-      margin-right: 0px;
-    }
+    text-align: center;
   }
 }
 
 .menu__tabs--selected {
-  color: #242424;
+  color: $mine_shaft;
+  background: $white;
   box-shadow: none;
-  background: #FFFFFF;
 }
 
 .menu__tabs--unselected {
-  color: #6C6C6C;
-  box-shadow: 2px 0px 1px #C8C8C8;
-  background:      -o-linear-gradient(top, $topGradient 50%, $botGradient 100%);
-  background:     -ms-linear-gradient(top, $topGradient 50%, $botGradient 100%);
-  background:    -moz-linear-gradient(top, $topGradient 50%, $botGradient 100%);
-  background: -webkit-linear-gradient(top, $topGradient 50%, $botGradient 100%);
-  background:         linear-gradient(top, $topGradient 50%, $botGradient 100%);
+  @include bg-gradient($white, $wild_sand);
+  box-shadow: 2px 0px 1px $silver;
+  color: $dove_gray;
 }

@@ -1,0 +1,54 @@
+$alabaster:         #F8F8F8;
+$alizarin_crimson:  #DA291C;
+$dove_gray:         #6C6C6C;
+$jelly_bean:        #256E9E;
+$mine_shaft:        #242424;
+$silver:            #C8C8C8;
+$white:             #FFFFFF;
+$wild_sand:         #F5F5F5;
+
+@mixin bg-gradient($topGradient, $botGradient) {
+  background:      -o-linear-gradient(top, $topGradient 50%, $botGradient 100%);
+  background:     -ms-linear-gradient(top, $topGradient 50%, $botGradient 100%);
+  background:    -moz-linear-gradient(top, $topGradient 50%, $botGradient 100%);
+  background: -webkit-linear-gradient(top, $topGradient 50%, $botGradient 100%);
+  background:         linear-gradient(top, $topGradient 50%, $botGradient 100%);
+}
+
+@mixin box-sizing($border-box) {
+  *,
+  *:after,
+  *:before {
+    -webkit-box-sizing: $border-box;
+       -moz-box-sizing: $border-box;
+            box-sizing: $border-box;
+  }
+}
+
+// http://css-tricks.com/snippets/css/clear-fix/
+@mixin clear-fix {
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+// 'max-height-child' and 'max-heigh-parent' pair together.
+// http://tinstardesign.wordpress.com/2012/09/21/how-to-make-a-child-div-the-same-height-as-its-parent-div/
+@mixin max-height-child {
+  height: 100%;
+  position: absolute;
+}
+
+@mixin max-height-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+// http://stackoverflow.com/questions/7273338/how-to-vertically-align-an-image-inside-div
+@mixin v-align-img {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}

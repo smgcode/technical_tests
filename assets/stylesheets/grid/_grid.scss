@@ -1,49 +1,37 @@
-*,
-*:after,
-*:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 $mobile: 480px;
 $tablet: 768px;
 
+@include box-sizing(border-box);
+
+[class*='g-'] { float: left; }
+
+.grid { @include clear-fix }
+
 @media screen and (min-width: $tablet + 1) {
-  .show-tablet-plus  { display: block; }
-  .show-desktop-plus { display: block; }
-  .show-desktop-plus-inline { display: inline; }
-  .g-search          { width: 3 / 10 * 100%; }
-  .g-nav             { width: 1 / 10 * 100%; }
   .g-deal            { width: 5 /  7 * 100%; }
   .g-deal-img        { width: 1 /  7 * 100%; }
   .g-deal-more       { width: 1 /  7 * 100%; }
+  .g-nav             { width: 1 / 10 * 100%; }
+  .g-search          { width: 3 / 10 * 100%; }
+  .show-desktop-plus { display: block; }
+  .show-desktop-plus-inline { display: inline; }
+  .show-tablet-plus  { display: block; }
 }
 
 @media screen and (max-width: $tablet) {
-  .show-tablet-plus  { display: block; }
-  .show-desktop-plus { display: none; }
-  .show-desktop-plus-inline { display: none; }
-  .g-search          { width: 3 / 10 * 100%; }
-  .g-nav             { width: 1 / 10 * 100%; }
   .g-deal            { width: 3 /  4 * 100%; }
   .g-deal-img        { width: 1 /  4 * 100%; }
+  .g-nav             { width: 1 / 10 * 100%; }
+  .g-search          { width: 3 / 10 * 100%; }
+  .show-desktop-plus { display: none; }
+  .show-desktop-plus-inline { display: none; }
+  .show-tablet-plus  { display: block; }
 }
 
 @media screen and (max-width: $mobile) {
-  .show-tablet-plus  { display: none; }
+  .g-deal            { width: 1 / 1 * 100%; }
+  .g-nav             { width: 1 / 7 * 100%; }
   .show-desktop-plus { display: none; }
   .show-desktop-plus-inline { display: none; }
-  .g-nav             { width: 1 / 7 * 100%; }
-  .g-deal            { width: 1 / 1 * 100%; }
+  .show-tablet-plus  { display: none; }
 }
-
-.grid {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-
-[class*='g-'] { float: left; }

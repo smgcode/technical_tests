@@ -1,24 +1,19 @@
 .accordion__section > p {
-  background-color: #242424;
+  background-color: $mine_shaft;
   color: white;
-  padding: 8px;
-  margin-top: 1px;
-  text-transform: uppercase;
-  font-weight: 100;
   font-size: 1.5em;
+  font-weight: 100;
+  margin-top: 1px;
+  padding: 8px;
+  text-transform: uppercase;
 
   i {
     font-size: 0.6em;
-    vertical-align: text-top;
     margin-top: 8px;
     padding: 0 8px;
+    vertical-align: text-top;
   }
 }
 
-.accordion__section--hide {
-  display: none;
-}
-
-.accordion__section--select > p {
-  background-color: #DA291C;
-}
+.accordion__section--hide { display: none; }
+.accordion__section--select > p { background-color: $alizarin_crimson; }
