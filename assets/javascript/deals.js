@@ -122,28 +122,28 @@ var switchCentre = function(resp, centre) {
     var dealsEl = centreEl.querySelectorAll("ul:first-of-type")[0];
     var activeCentreEl = centreEl.querySelectorAll("p i")[0];
     if (centreEl.id != centre.code) {
-      addClass(dealsEl, "accordion__section--hide");
-      addClass(activeCentreEl, "fa-plus");
+      addClass(dealsEl,           "accordion__section--hide");
+      removeClass(centreEl,       "accordion__section--select");
+      addClass(activeCentreEl,    "fa-plus");
+      removeClass(activeCentreEl, "fa-minus");
     } else {
-      toggleClass(dealsEl, "accordion__section--hide");
+      toggleClass(dealsEl,        "accordion__section--hide");
+      toggleClass(centreEl,       "accordion__section--select");
       toggleClass(activeCentreEl, "fa-plus");
       toggleClass(activeCentreEl, "fa-minus");
-      toggleClass(centreEl, "accordion__section--select");
     }
   });
 };
 
 var switchState = function(resp, state, tabsEl, selectedTabEl) {
-  console.log(tabsEl);
   resp.forEach(function(curState, index) {
     var stateEl = document.getElementById(curState + "-centres");
     var stateNavEl = tabsEl.querySelectorAll("li:nth-child(" + (index + 1) + ")")[0];
-    console.log(stateNavEl);
     removeClass(stateNavEl, "menu__tabs--selected");
-    addClass(stateNavEl, "menu__tabs--unselected");
+    addClass(stateNavEl,    "menu__tabs--unselected");
     stateEl.style.display = stateEl.id == state + "-centres" ? '' : 'none'
   });
-  addClass(selectedTabEl, "menu__tabs--selected");
+  addClass(selectedTabEl,    "menu__tabs--selected");
   removeClass(selectedTabEl, "menu__tabs--unselected");
 };
 
