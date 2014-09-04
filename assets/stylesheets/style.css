@@ -13,13 +13,16 @@
   .show-desktop-plus {
     display: block; }
 
+  .show-desktop-plus-inline {
+    display: inline; }
+
   .g-search {
-    width: 40%; }
+    width: 30%; }
 
   .g-nav {
     width: 10%; }
 
-  .g-deal-my:nth-child(2) {
+  .g-deal {
     width: 71.42857%; }
 
   .g-deal-img {
@@ -34,8 +37,11 @@
   .show-desktop-plus {
     display: none; }
 
+  .show-desktop-plus-inline {
+    display: none; }
+
   .g-search {
-    width: 40%; }
+    width: 30%; }
 
   .g-nav {
     width: 10%; }
@@ -52,28 +58,25 @@
   .show-desktop-plus {
     display: none; }
 
+  .show-desktop-plus-inline {
+    display: none; }
+
   .g-nav {
-    width: 16.66667%; }
+    width: 14.28571%; }
 
   .g-deal {
     width: 100%; } }
-.grid {
-  background: white;
-  margin: 0; }
-  .grid:after {
-    content: "";
-    display: table;
-    clear: both; }
+.grid:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 [class*='g-'] {
   float: left; }
 
-header img {
-  width: 130px; }
-
 body {
   margin: 0;
-  padding: 20px;
+  padding: 15px 20px;
   font-family: 'Lato', sans-serif;
   color: #242424; }
 
@@ -81,13 +84,18 @@ h1 {
   font-weight: 100;
   font-size: 2.5em; }
 
+h3 {
+  margin: 0;
+  padding: 0; }
+
 ul {
   margin: 0;
   padding: 0;
   list-style-type: none; }
 
-.hide-centre {
-  display: none; }
+p {
+  margin: 0;
+  padding: 0; }
 
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -112,3 +120,109 @@ ul {
 
 .fa-play:before {
   content: "\f04b"; }
+
+.fa-plus:before {
+  content: "\f067"; }
+
+.fa-minus:before {
+  content: "\f068"; }
+
+header img {
+  width: 130px; }
+header h1 {
+  margin: 6px 0px 30px 0px; }
+header nav > div {
+  margin-bottom: 10px; }
+
+.search {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  padding: 8px;
+  color: #6C6C6C;
+  float: right; }
+  .search span {
+    font-style: italic;
+    font-family: serif;
+    padding-left: 3px; }
+  .search i {
+    font-size: small;
+    padding: 0px 7px; }
+
+.menu__tabs li {
+  text-align: center;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+  margin-left: 3px;
+  margin-right: 3px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px; }
+  .menu__tabs li:first-child {
+    margin-left: 0px; }
+  .menu__tabs li:last-child {
+    margin-right: 0px; }
+
+.menu__tabs--selected {
+  color: #242424;
+  box-shadow: none;
+  background: #FFFFFF; }
+
+.menu__tabs--unselected {
+  color: #6C6C6C;
+  box-shadow: 2px 0px 1px #C8C8C8;
+  background: -o-linear-gradient(top, white 50%, whitesmoke 100%);
+  background: -ms-linear-gradient(top, white 50%, whitesmoke 100%);
+  background: -moz-linear-gradient(top, white 50%, whitesmoke 100%);
+  background: -webkit-linear-gradient(top, white 50%, whitesmoke 100%);
+  background: linear-gradient(top, white 50%, whitesmoke 100%); }
+
+.accordion__section > p {
+  background-color: #242424;
+  color: white;
+  padding: 8px;
+  margin-top: 1px;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 1.5em; }
+  .accordion__section > p i {
+    font-size: 0.6em;
+    vertical-align: text-top;
+    margin-top: 8px;
+    padding: 0 8px; }
+
+.accordion__section--hide {
+  display: none; }
+
+.accordion__section--select > p {
+  background-color: #DA291C; }
+
+.deals li:nth-child(2n + 1) {
+  background-color: #F8F8F8; }
+
+.deal__title {
+  padding: 15px; }
+  .deal__title p {
+    color: #6C6C6C;
+    font-size: small;
+    margin-top: 10px; }
+
+.deal__image {
+  text-align: center;
+  height: 78px;
+  width: 100px; }
+  .deal__image img {
+    vertical-align: middle;
+    max-height: 78px;
+    max-width: 100px; }
+  .deal__image .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle; }
+
+.deal__more p {
+  padding: 20px 0;
+  float: right;
+  font-size: small;
+  color: #256E9E; }

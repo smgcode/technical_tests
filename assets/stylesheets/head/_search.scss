@@ -1,0 +1,19 @@
+.search {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  padding: 8px;
+  color: #6C6C6C;
+  float: right;
+
+  span {
+    font-style: italic;
+    font-family: serif;
+    padding-left: 3px;
+  }
+
+  i {
+    font-size: small;
+    padding: 0px 7px;
+  }
+}

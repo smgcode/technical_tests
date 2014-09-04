@@ -11,7 +11,7 @@ var buildCentres = function (resp, el) {
       state:      centre.state,
       short_name: centre.short_name,
       code:       centre.code,
-      active:     (index == 0)
+      first:     (index == 0)
     });
     el.insertAdjacentHTML('beforeend', centreTemplate);
   });
@@ -29,9 +29,10 @@ var buildDeal = function(resp, el, data) {
 }
 
 var buildDealNav = function(resp, el) {
-  resp.forEach(function(state) {
+  resp.forEach(function(state, index) {
     var navTemplate = new EJS({ url: "assets/templates/deals_nav.ejs" }).render({
-      state: state
+      state: state,
+      first: (index == 0)
     });
     el.insertAdjacentHTML('beforeend', navTemplate);
   });
@@ -107,35 +108,43 @@ var listenToCentres = function(resp, el) {
 
 var listenToStates = function(resp, el) {
   resp.forEach(function(state, index) {
-    var centreEl = el.children[index]
-    centreEl.addEventListener("click", function() {
-      switchState(resp, state);
-      getStatesCentres(centreEl.innerHTML, state);
+    var stateEl = el.children[index];
+    stateEl.addEventListener("click", function() {
+      switchState(resp, state, el, stateEl);
+      getStatesCentres(stateEl.innerHTML, state);
     });
   });
 };
 
 var switchCentre = function(resp, centre) {
   resp.forEach( function(curCentre) {
-    var className = "hide-centre";
     var centreEl = document.getElementById(curCentre.code);
     var dealsEl = centreEl.querySelectorAll("ul:first-of-type")[0];
-    var activeCentreEl = centreEl.querySelectorAll("p span")[0]
+    var activeCentreEl = centreEl.querySelectorAll("p i")[0];
     if (centreEl.id != centre.code) {
-      addClass(dealsEl, className)
-      activeCentreEl.innerHTML = "+";
+      addClass(dealsEl, "accordion__section--hide");
+      addClass(activeCentreEl, "fa-plus");
     } else {
-      toggleClass(dealsEl, className);
-      activeCentreEl.innerHTML = activeCentreEl.innerHTML == "+" ? "-" : "+";
+      toggleClass(dealsEl, "accordion__section--hide");
+      toggleClass(activeCentreEl, "fa-plus");
+      toggleClass(activeCentreEl, "fa-minus");
+      toggleClass(centreEl, "accordion__section--select");
     }
   });
 };
 
-var switchState = function(resp, state) {
-  resp.forEach(function(curState) {
+var switchState = function(resp, state, tabsEl, selectedTabEl) {
+  console.log(tabsEl);
+  resp.forEach(function(curState, index) {
     var stateEl = document.getElementById(curState + "-centres");
+    var stateNavEl = tabsEl.querySelectorAll("li:nth-child(" + (index + 1) + ")")[0];
+    console.log(stateNavEl);
+    removeClass(stateNavEl, "menu__tabs--selected");
+    addClass(stateNavEl, "menu__tabs--unselected");
     stateEl.style.display = stateEl.id == state + "-centres" ? '' : 'none'
   });
+  addClass(selectedTabEl, "menu__tabs--selected");
+  removeClass(selectedTabEl, "menu__tabs--unselected");
 };
 
 ajax('GET', getStates, API_URL + ALL_CENTRES_URL);

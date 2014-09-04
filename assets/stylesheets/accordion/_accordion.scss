@@ -1,0 +1,24 @@
+.accordion__section > p {
+  background-color: #242424;
+  color: white;
+  padding: 8px;
+  margin-top: 1px;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 1.5em;
+
+  i {
+    font-size: 0.6em;
+    vertical-align: text-top;
+    margin-top: 8px;
+    padding: 0 8px;
+  }
+}
+
+.accordion__section--hide {
+  display: none;
+}
+
+.accordion__section--select > p {
+  background-color: #DA291C;
+}

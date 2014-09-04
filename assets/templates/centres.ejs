@@ -1,4 +1,4 @@
-<li id="<%= code %>">
-	<p><span><%= active ? "-" : "+"  %></span> <%= short_name %></p>
-	<ul class=<%= active ? "" : "hide-centre" %>></ul>
+<li id="<%= code %>" class="accordion__section<%= first ? ' accordion__section--select' : ''%> ">
+	<p><i class="fa fa-<%= first ? 'minus' : 'plus' %>"></i> <%= short_name %></p>
+	<ul class="deals<%= first ? '' : ' accordion__section--hide' %>"></ul>
 </li>

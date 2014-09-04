@@ -1,0 +1,40 @@
+.deals {
+  li:nth-child(2n + 1) {
+    background-color: #F8F8F8;
+  }
+}
+
+.deal__title {
+  padding: 15px;
+
+  p {
+    color: #6C6C6C;
+    font-size: small;
+    margin-top: 10px;
+  }
+}
+
+.deal__image {
+  text-align: center;
+  height: 78px;
+  width: 100px;
+
+  img {
+    vertical-align: middle;
+    max-height: 78px;
+    max-width: 100px;
+  }
+
+  .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+.deal__more p {
+  padding: 20px 0;
+  float: right;
+  font-size: small;
+  color: #256E9E;
+}
