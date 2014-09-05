@@ -7,6 +7,9 @@ $silver:            #C8C8C8;
 $white:             #FFFFFF;
 $wild_sand:         #F5F5F5;
 
+$mobile: 480px;
+$tablet: 768px;
+
 @mixin bg-gradient($topGradient, $botGradient) {
   background:      -o-linear-gradient(top, $topGradient 50%, $botGradient 100%);
   background:     -ms-linear-gradient(top, $topGradient 50%, $botGradient 100%);
@@ -51,4 +54,22 @@ $wild_sand:         #F5F5F5;
   display: inline-block;
   height: 100%;
   vertical-align: middle;
+}
+
+@media screen and (min-width: $tablet + 1) {
+  .show-desktop-plus { display: block; }
+  .show-desktop-plus-inline { display: inline; }
+  .show-tablet-plus  { display: block; }
+}
+
+@media screen and (max-width: $tablet) {
+  .show-desktop-plus { display: none; }
+  .show-desktop-plus-inline { display: none; }
+  .show-tablet-plus  { display: block; }
+}
+
+@media screen and (max-width: $mobile) {
+  .show-desktop-plus { display: none; }
+  .show-desktop-plus-inline { display: none; }
+  .show-tablet-plus  { display: none; }
 }

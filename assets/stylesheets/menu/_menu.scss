@@ -25,3 +25,17 @@
   box-shadow: 2px 0px 1px $silver;
   color: $dove_gray;
 }
+
+@media screen and (min-width: $tablet + 1) {
+  .grid__nav { @include grid-one-tenth; }
+  .grid__search { @include grid-three-tenths; }
+}
+
+@media screen and (max-width: $tablet) {
+  .grid__nav { @include grid-one-tenth; }
+  .grid__search { @include grid-three-tenths; }
+}
+
+@media screen and (max-width: $mobile) {
+  .grid__nav { @include grid-one-seventh; }
+}

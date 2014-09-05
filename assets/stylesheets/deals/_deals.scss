@@ -37,6 +37,27 @@ $image-width: 100px;
   }
 }
 
-@media screen and (min-width: $tablet + 1) { .deal_title--shift { margin-left: $image-width; } }
-@media screen and (max-width: $tablet)     { .deal_title--shift { margin-left: $image-width; } }
-@media screen and (max-width: $mobile)     { .deal_title--shift { margin-left: 0; } }
+@media screen and (min-width: $tablet + 1) {
+  .deal__title--shift { margin-left: $image-width; }
+  .grid__deal__title { @include grid-five-sevenths; }
+  .grid__deal__more { @include grid-one-seventh; }
+}
+
+@media screen and (max-width: $tablet) {
+  .deal__title--shift { margin-left: $image-width; }
+  .grid__deal__title { @include grid-three-quarters }
+}
+
+@media screen and (max-width: $mobile) {
+  .deal__title--shift { margin-left: 0; }
+  .grid__deal__title { @include grid-one-whole; }
+}
+
+.nodeals {
+  background-color: $alabaster;
+  color: $dove_gray;
+  padding: 15px;
+  text-align: center;
+
+  h2 { text-transform: uppercase; }
+}

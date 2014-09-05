@@ -1,37 +1,13 @@
-$mobile: 480px;
-$tablet: 768px;
-
 @include box-sizing(border-box);
 
-[class*='g-'] { float: left; }
+[class*='grid__'] { float: left; }
 
 .grid { @include clear-fix }
 
-@media screen and (min-width: $tablet + 1) {
-  .g-deal            { width: 5 /  7 * 100%; }
-  .g-deal-img        { width: 1 /  7 * 100%; }
-  .g-deal-more       { width: 1 /  7 * 100%; }
-  .g-nav             { width: 1 / 10 * 100%; }
-  .g-search          { width: 3 / 10 * 100%; }
-  .show-desktop-plus { display: block; }
-  .show-desktop-plus-inline { display: inline; }
-  .show-tablet-plus  { display: block; }
-}
-
-@media screen and (max-width: $tablet) {
-  .g-deal            { width: 3 /  4 * 100%; }
-  .g-deal-img        { width: 1 /  4 * 100%; }
-  .g-nav             { width: 1 / 10 * 100%; }
-  .g-search          { width: 3 / 10 * 100%; }
-  .show-desktop-plus { display: none; }
-  .show-desktop-plus-inline { display: none; }
-  .show-tablet-plus  { display: block; }
-}
-
-@media screen and (max-width: $mobile) {
-  .g-deal            { width: 1 / 1 * 100%; }
-  .g-nav             { width: 1 / 7 * 100%; }
-  .show-desktop-plus { display: none; }
-  .show-desktop-plus-inline { display: none; }
-  .show-tablet-plus  { display: none; }
-}
+@mixin grid-one-whole      { width: 100% }
+@mixin grid-one-quarter    { width: 1 /  4 * 100%; }
+@mixin grid-three-quarters { width: 3 /  4 * 100%; }
+@mixin grid-one-seventh    { width: 1 /  7 * 100%; }
+@mixin grid-five-sevenths  { width: 5 /  7 * 100%; }
+@mixin grid-one-tenth      { width: 1 / 10 * 100%; }
+@mixin grid-three-tenths   { width: 3 / 10 * 100%; }
