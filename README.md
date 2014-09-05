@@ -16,3 +16,4 @@ Built from mockup [found here](https://github.com/westfield/technical_tests/blob
 
 - Caching
 - Enable search field
+- Minify css/js
