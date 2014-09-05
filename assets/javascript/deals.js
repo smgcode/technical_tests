@@ -60,15 +60,19 @@ var getCentres = function(resp) {
 };
 
 var getCentresDeals = function(el) {
-  if (!el.querySelectorAll("ul:first-of-type")[0].hasChildNodes())
-    ajax('GET', getDeals, API_URL + CENTRE_URL + el.id + PUB_URL, el.querySelector("ul:first-of-type"));
+  if (!el.querySelectorAll("ul:first-of-type")[0].hasChildNodes()){
+    ajax('GET', getDeals, API_URL + CENTRE_URL + el.id + PUB_URL, el);
+    addClass(el.querySelectorAll("p i")[0], "fa-spin");
+  }
 };
 
 var getDeals = function(resp, el) {
-  if (resp.length == 0) return buildNoDeals(el);
+  var dealsEl = el.querySelector("ul:first-of-type")
+  if (resp.length == 0) return buildNoDeals(dealsEl);
   resp.forEach(function(data) {
-    ajax('GET', buildDeal, API_URL + STORE_URL + data.deal_stores[0].store_service_id, el, data);
+    ajax('GET', buildDeal, API_URL + STORE_URL + data.deal_stores[0].store_service_id, dealsEl, data);
   });
+  removeClass(el.querySelectorAll("p i")[0], "fa-spin");
 };
 
 var getStates = function(resp) {
